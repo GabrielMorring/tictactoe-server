@@ -27,12 +27,8 @@ io.on("connection", (socket) => {
   });
 
   socket.on("do_move", (data) => {
+    console.log(`User moved`);
     socket.to(data.room).emit("receive_move", { squares: data.squares });
-  });
-
-  socket.on("send_restart", (data) => {
-    console.log("restart");
-    socket.to(data.room).emit("receive_restart", {});
   });
 
   socket.on("disconnected", () => {
