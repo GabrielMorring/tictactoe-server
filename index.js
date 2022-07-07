@@ -5,14 +5,13 @@ const { Server } = require("socket.io");
 const cors = require("cors");
 
 app.use(cors());
-app.get("/");
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
     origin:
-      "https://62c760798bb9fd00af6bf0b7--chic-sunburst-93eaaa.netlify.app/",
+      "https://62c760798bb9fd00af6bf0b7--chic-sunburst-93eaaa.netlify.app",
     methods: ["GET, POST"],
   },
 });
